@@ -1,0 +1,32 @@
+body {
+    width: 100%;
+}
+
+.main-content {
+    display: flex;
+    gap: 20px;
+}
+
+.player-container {
+    flex: 1;
+}
+
+.social-media a {
+    margin-right: 10px;
+}
+
+#cart {
+    width: 300px;
+    height: 550px; 
+    border: 1px solid #ccc;
+    padding: 15px;
+    background: #f8f9fa; 
+    position: sticky;
+    top: 20px;
+    overflow-y: auto;
+}
+
+.search-bar-container {
+    max-width: 400px; 
+    margin: 0 auto; 
+}
