@@ -1,10 +1,17 @@
-document.getElementById('searchButton').addEventListener('click', searchMeals);
 
-function searchMeals() {
+document.addEventListener('DOMContentLoaded', function () {
+    searchMeals('a');// initially scearch by a.
+});
+
+document.getElementById('searchButton').addEventListener('click', () => {
     const searchInput = document.getElementById('searchInput').value.trim();
-    if (searchInput === '') return;
+    searchMeals(searchInput);
+});
 
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`)
+function searchMeals(searchTerm = '') {
+    if (searchTerm === '') return;
+
+    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`)
         .then(response => response.json())
         .then(data => {
             displayMeals(data.meals);
